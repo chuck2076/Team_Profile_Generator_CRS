@@ -5,7 +5,7 @@ it("Should have an office number", ()=> {
     expect(officeNumber).toEqual(Number)
 
 it("Should have a manager role", () => {
-    expect (getRole(data.role)).toReturn('Manager')
+    expect (getRole(role)).toReturn('Manager')
 })    
 
 });
