@@ -1,6 +1,6 @@
-const intern = require("./lib/intern.js")
+const Intern = require("../lib/intern.js")
 
-describe("intern", () => {
+describe("Intern", () => {
 
     school
 

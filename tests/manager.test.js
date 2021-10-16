@@ -1,8 +1,8 @@
-const manager = require("./lib/manager.js")
+const Manager = require("../lib/manager.js")
 
-describe("manager", () => {
+describe("Manager", () => {
 it("Should have an office number", ()=> {
-    expect(officeNumber).toEqual(data.officeNumber)
+    expect(officeNumber).toEqual(Number)
 
 it("Should have a manager role", () => {
     expect (getRole(data.role)).toReturn('Manager')

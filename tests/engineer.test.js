@@ -1,6 +1,6 @@
-const engineer = require("./lib/engineer.js")
+const Engineer = require("../lib/engineer")
 
-describe("engineer", () => {
+describe("Engineer", () => {
 
     github—GitHub username
 

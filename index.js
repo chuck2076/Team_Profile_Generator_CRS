@@ -1,73 +1,87 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const Employee = require("./lib/employee");
+const Manager = require("./lib/manager");
+const Intern = require("./lib/intern");
+const Engineer = require("./lib/engineer");
 
 const questions = [{
-    type: "input",
-    name: "title",
-    message: "What is the title of this project?"
-    },
-{
-        type: "list",
-        name: "license",
-        message: "Choose a license for this project:",
-        choices: ["Apache", "GNU", "MIT", "Mozilla"]
-    },
-{
-    type: "input",
-    name: "description",
-    message: "Give a brief description of this project"
-    },
-{
-    type: "input",
-    name: "installation",
-    message: "What are the steps to installing the project?"
-    },
-{
-    type: "input",
-    name: "usage",
-    message: "How does the user use the project?"
-    },
-{
-    type: "input",
-    name: "contributors",
-    message: "Link GitHub repos of contributors:",
+    type: "list",
+    name: "role",
+    message: "What is the role of the employee?",
+    choices: ["Manager", "Engineer", "Intern"]
     },
 {
         type: "input",
-        name: "tests",
-        message: "Links to any tests of the project:",
+        name: "name",
+        message: "Name of employee:"
     },
 {
-        type: "input",
-        name: "userName",
-        message: "Who created the project?",
-    },
-{
-        type: "input",
-        name: "repo",
-        message: "Link the creator GitHub repo:",
-    },
-{
-        type: "input",
-        name: "email",
-        message: "Link the creator email:",
-    },
-    
+    type: "input",
+    name: "id",
+    message: "What is the employee ID:",
 
+},
+
+{
+    type: "input",
+    name: "email",
+    message: "Enter the employee Email:"
+    },
+{
+    type: "input",
+    name: "officeNumber",
+    message: "What is the manager office number?",
+    when(choices) {
+        return choices.role === "Manager"
+    }
+},
+
+{
+    type: "input",
+    name: "github",
+    message: "Link GitHub repo of engineer:",
+    when(choices) {
+        return choices.role === "Engineer"
+    }
+
+    },
+{
+        type: "input",
+        name: "school",
+        message: "Name of intern school:",
+        when(choices) {
+            return choices.role === "Intern"
+        }
+
+    },
 
 ];
 
-// TODO: Create a function to write README file
+// inquirer
+//   .prompt(questions)
+//   .then((data) => {
+//     console.log(JSON.stringify(data))
+//   })
+//   .catch((error) => {
+//     if (error.isTtyError) {
+//       console.log("Your console environment is not supported!")
+//     } else {
+//       console.log(error)
+//     }
+// })
+
+// // TODO: Create a function to write HTML file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, data)
 };
 
-// TODO: Create a function to initialize app
+// // // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then((userInput) => {
-    let readMeString = generateMarkdown(userInput)
-    writeToFile ("output/README.md", readMeString)
+    .then((data) => {
+    let readMeString = new Employee(data)
+    writeToFile ("output/team.html", readMeString)
     })
 };
 
