@@ -1,0 +1,10 @@
+.jumbotron {
+    background-color: rgb(214, 58, 58);
+    text-align: center;
+    color: seashell;
+}
+
+.card-header {
+    background-color: rgb(214, 58, 58);
+    color: seashell;
+}

@@ -8,6 +8,7 @@ const Intern = require("./lib/intern");
 const Engineer = require("./lib/engineer");
 
 const teamArray = [];
+console.log(teamArray);
 
 const manQ = () => {
 return inquirer.prompt ([
@@ -166,10 +167,8 @@ return inquirer.prompt ([
 
 manQ ()
 .then(empQ)
-// .then(teamArray => {
-//     return generateHTML(teamArray)
-// })
-// .then()
+
+
 
 
 // inquirer
