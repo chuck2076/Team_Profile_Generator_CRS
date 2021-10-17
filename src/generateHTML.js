@@ -1,6 +1,6 @@
 //const index = require("index.js")
-
-const generateHTML = (teamArray) => {
+//This file generates the HTML to be used in team.html
+const generateHTML = (data) => {
   return `
   <!DOCTYPE html>
   <html lang="en">

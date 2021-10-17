@@ -1,15 +1,16 @@
+//Creating global variables to connect files
 const generateHTML = require("./src/generateHTML")
-
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Employee = require("./lib/employee");
 const Manager = require("./lib/manager");
 const Intern = require("./lib/intern");
 const Engineer = require("./lib/engineer");
-
+// Creating an array to store data
 const teamArray = [];
-console.log(teamArray);
 
+//Help with structure and some functions from https://github.com/nicolewallace09/team-profile-generator
+//Starting inquirer prompt with manager questions
 const manQ = () => {
 return inquirer.prompt ([
 {
@@ -52,16 +53,16 @@ return inquirer.prompt ([
     }
 }
 ])
-
+// creating Manager data set
 .then(manInput => {
     const  { name, id, email, officeNumber } = manInput; 
     const manager = new Manager (name, id, email, officeNumber);
-
+//Storing manager into Team array
     teamArray.push(manager); 
     console.log(manager); 
 })
 };
-
+// creating Employee question prompts
 const empQ = () => {
  console.log('-- Add Employees to the Team --');
 
@@ -119,7 +120,7 @@ return inquirer.prompt ([
         }
 
 },
-
+// Prompt to add more employees
 {
     type: 'confirm',
     name: 'confirm',
@@ -128,7 +129,7 @@ return inquirer.prompt ([
 }
 ])
 
-
+//creating Engineer and Intern data sets
 .then(empInput => {
     const  { name, id, email, role, github, school, confirm } = empInput; 
     //const employee = new Employee (name, id, email, role, github, school);
@@ -144,9 +145,9 @@ return inquirer.prompt ([
 
         console.log(employee);
     }
-
+// Adding data sets to array
     teamArray.push(employee); 
-
+//if statement looping back to employee questions if more employees need to be added
     if (confirm) {
         return empQ(teamArray); 
     } else {
@@ -156,18 +157,15 @@ return inquirer.prompt ([
 
 };
 
-// // // TODO: Create a function to write HTML file
-// function writeToFile(fileName, data) {
-//      fs.writeFileSync(fileName, data)
-//      .then((data) => {
-//         let newEmployee = new Employee(data)
-//         writeToFile ("output/team.html", newEmployee)
-//  });
-// }
 
+//Init for questions
 manQ ()
 .then(empQ)
 
+// // TODO: Create a function to write HTML file
+ writeFile = data => {
+    fs.writeFile (".src/generateHTML.js", data)
+};
 
 
 
