@@ -24,6 +24,18 @@ describe("id", () => {
         expect(newEmployee.id).toEqual(id)
     })
     })
+
+describe("email", () => {
+    it ("Should return the email of the employee", () => {
+        const name = "John"
+        const id = 6
+        const email = "chuck@chuck.com"
+        const newEmployee = new Employee (name, id, email)
+        expect(newEmployee.email).toEqual(email)
+    })
+    })
+
+
        
     // name
 

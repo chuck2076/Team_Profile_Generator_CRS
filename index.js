@@ -41,8 +41,8 @@ return inquirer.prompt ([
     type: "input",
     name: "officeNumber",
     message: "What is the manager office number?",
-    validate: nameInput => {
-        if (isNaN(nameInput)) {
+    validate: input => {
+        if (isNaN(input)) {
             console.log ("Please enter a Number!")
             return false;
         }else {
@@ -83,8 +83,8 @@ return inquirer.prompt ([
     type: "input",
     name: "id",
     message: "What is the Employee ID?",
-    validate: nameInput => {
-    if (isNaN(nameInput)) {
+    validate: input => {
+    if (isNaN(input)) {
         console.log ("Please enter a Number!")
         return false;
     }else {
@@ -155,9 +155,21 @@ return inquirer.prompt ([
 
 };
 
+// // // TODO: Create a function to write HTML file
+// function writeToFile(fileName, data) {
+//      fs.writeFileSync(fileName, data)
+//      .then((data) => {
+//         let newEmployee = new Employee(data)
+//         writeToFile ("output/team.html", newEmployee)
+//  });
+// }
 
 manQ ()
 .then(empQ)
+// .then(teamArray => {
+//     return generateHTML(teamArray)
+// })
+// .then()
 
 
 // inquirer
