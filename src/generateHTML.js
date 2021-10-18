@@ -1,5 +1,55 @@
 //const index = require("index.js")
+
 //This file generates the HTML to be used in team.html
+const managerCard = (data) => {
+const Manager = data[0] 
+return` <div class="card border-danger mb-3" style="max-width: 18rem;">
+<div class="card-header">
+<h3>${Manager.name}</h3>
+<h4>Manager</h4><i class="fa-solid fa-mug-hot fa-lg"></i>
+</div>
+<div class="card-body text-danger">
+<p class="id">ID: ${Manager.id}</p>
+<p class="email">Email: <a href="mailto:${Manager.email}">${Manager.email}</a></p>
+<p class="office">Office Number: ${Manager.officeNumber}</p>
+</div>
+</div>`  
+}
+
+
+const employeeCard = (data) => {
+  const cards = ``
+data.forEach(element => {
+  console.log(element)
+ if (element.getRole() === "Engineer") 
+ cards = cards + `      <div class="card border-danger mb-3" style="max-width: 18rem;">
+ <div class="card-header">
+ <h3>${element.name}</h3>
+ <h4>Engineer</h4><i class="fas fa-laptop-code"></i>
+ </div>
+ <div class="card-body text-danger">
+ <p class="id">ID: ${element.id}</p>
+ <p class="email">Email: <a href="mailto:${element.email}">${element.email}</a></p>
+ <p class="office">GitHub: ${element.github}</p>
+</div>
+</div>`
+else {
+ ` <div class="card border-danger mb-3" style="max-width: 18rem;">
+<div class="card-header">
+  <h3>${element.name}</h3>
+  <h4>Intern</h4><i class="fas fa-graduation-cap"></i>
+</div>
+<div class="card-body text-danger">
+  <p class="id">ID: ${element.id}</p>
+  <p class="email">Email: <a href="mailto:${element.email}">${element.email}</a></p>
+  <p class="office">School: ${element.school}</p>
+</div>
+</div>`
+   
+  };
+})
+}
+
 const generateHTML = (data) => {
   return `
   <!DOCTYPE html>
@@ -31,41 +81,10 @@ const generateHTML = (data) => {
         
   <main class="row flex-row justify-content-center" id="teamCards">
     <div class="card-deck">
-      <div class="card border-danger mb-3" style="max-width: 18rem;">
-        <div class="card-header">
-        <h3>${Manager.name}</h3>
-        <h4>Manager</h4><i class="fa-solid fa-mug-hot fa-lg"></i>
-        </div>
-        <div class="card-body text-danger">
-        <p class="id">ID: ${Manager.id}</p>
-        <p class="email">Email: <a href="mailto:${Manager.email}">${Manager.email}</a></p>
-        <p class="office">Office Number: ${Manager.officeNumber}</p>
-    </div>
-      </div>
-  
-      <div class="card border-danger mb-3" style="max-width: 18rem;">
-        <div class="card-header">
-        <h3>${Engineer.name}</h3>
-        <h4>Engineer</h4><i class="fas fa-laptop-code"></i>
-        </div>
-        <div class="card-body text-danger">
-        <p class="id">ID: ${Engineer.id}</p>
-        <p class="email">Email: <a href="mailto:${Engineer.email}">${Engineer.email}</a></p>
-        <p class="office">GitHub: ${Engineer.github}</p>
-    </div>
-      </div>
-  
-      <div class="card border-danger mb-3" style="max-width: 18rem;">
-        <div class="card-header">
-          <h3>${Intern.name}</h3>
-          <h4>Intern</h4><i class="fas fa-graduation-cap"></i>
-        </div>
-        <div class="card-body text-danger">
-          <p class="id">ID: ${Intern.id}</p>
-          <p class="email">Email: <a href="mailto:${Intern.email}">${Intern.email}</a></p>
-          <p class="office">School: ${Intern.school}</p>
-        </div>
-      </div>
+    ${managerCard(data)}
+    ${employeeCard(data)}
+    ${employeeCard(data)}
+
     </div>
   </main>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -75,7 +94,8 @@ const generateHTML = (data) => {
   </body>
   </html>
 
-`;
+`
+
 };
 
 module.exports= generateHTML

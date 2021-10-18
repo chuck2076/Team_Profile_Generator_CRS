@@ -12,7 +12,7 @@ const teamArray = [];
 //Help with structure and some functions from https://github.com/nicolewallace09/team-profile-generator
 //Starting inquirer prompt with manager questions
 const manQ = () => {
-return inquirer.prompt ([
+ return inquirer.prompt ([
 {
     type: "input",
     name: "name",
@@ -60,6 +60,7 @@ return inquirer.prompt ([
 //Storing manager into Team array
     teamArray.push(manager); 
     console.log(manager); 
+    //console.log(generateHTML(teamArray))
 })
 };
 // creating Employee question prompts
@@ -151,7 +152,7 @@ return inquirer.prompt ([
     if (confirm) {
         return empQ(teamArray); 
     } else {
-        return teamArray;
+        writeToFile("./output/team.html", generateHTML(teamArray))
     }
 })
 
@@ -161,12 +162,18 @@ return inquirer.prompt ([
 //Init for questions
 manQ ()
 .then(empQ)
+//.then(generateHTML(teamArray))
+
+//.then () => {
+
+//}
 
 // // TODO: Create a function to write HTML file
- writeFile = data => {
-    fs.writeFile (".src/generateHTML.js", data)
-};
-
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName,data, (err) => {
+        err ? console.error(err) : console.log('HTML file generated!');
+    })
+}
 
 
 // inquirer
