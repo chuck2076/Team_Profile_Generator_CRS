@@ -18,11 +18,11 @@ return` <div class="card border-danger mb-3" style="max-width: 18rem;">
 
 
 const employeeCard = (data) => {
-  const cards = ``
+  let cards = ``
 data.forEach(element => {
   console.log(element)
- if (element.getRole() === "Engineer") 
- cards = cards + `      <div class="card border-danger mb-3" style="max-width: 18rem;">
+ if (element.getRole() === "Engineer") {
+ cards = cards + `<div class="card border-danger mb-3" style="max-width: 18rem;">
  <div class="card-header">
  <h3>${element.name}</h3>
  <h4>Engineer</h4><i class="fas fa-laptop-code"></i>
@@ -33,8 +33,8 @@ data.forEach(element => {
  <p class="office">GitHub: ${element.github}</p>
 </div>
 </div>`
-else {
- ` <div class="card border-danger mb-3" style="max-width: 18rem;">
+ } else if (element.getRole() === "Intern")  {
+cards = cards + `<div class="card border-danger mb-3" style="max-width: 18rem;">
 <div class="card-header">
   <h3>${element.name}</h3>
   <h4>Intern</h4><i class="fas fa-graduation-cap"></i>
@@ -45,9 +45,11 @@ else {
   <p class="office">School: ${element.school}</p>
 </div>
 </div>`
-   
+ } else {
+   console.log("Oops, something went wrong!")
   };
 })
+return cards
 }
 
 const generateHTML = (data) => {
@@ -83,8 +85,7 @@ const generateHTML = (data) => {
     <div class="card-deck">
     ${managerCard(data)}
     ${employeeCard(data)}
-    ${employeeCard(data)}
-
+    
     </div>
   </main>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

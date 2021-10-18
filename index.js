@@ -59,7 +59,7 @@ const manQ = () => {
     const manager = new Manager (name, id, email, officeNumber);
 //Storing manager into Team array
     teamArray.push(manager); 
-    console.log(manager); 
+//    console.log(manager); 
     //console.log(generateHTML(teamArray))
 })
 };
@@ -139,19 +139,20 @@ return inquirer.prompt ([
     if (role === "Engineer") {
         employee = new Engineer (name, id, email, github);
 
-        console.log(employee);
+//        console.log(employee);
 
     } else if (role === "Intern") {
         employee = new Intern (name, id, email, school);
 
-        console.log(employee);
+//        console.log(employee);
     }
 // Adding data sets to array
     teamArray.push(employee); 
 //if statement looping back to employee questions if more employees need to be added
     if (confirm) {
         return empQ(teamArray); 
-    } else {
+    } else {  //else write to team.html
+        console.log(teamArray)
         writeToFile("./output/team.html", generateHTML(teamArray))
     }
 })
