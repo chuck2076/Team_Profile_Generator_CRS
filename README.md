@@ -6,11 +6,13 @@
  > [![badge](https://img.shields.io/badge/license-MIT-brightgreen)](MIT)
 ## Table of Contents:
 
-- [Installation](https://github.com/chuck2076/Team_Profile_Generator_CRS/tree/main/output#installation)
-- [Usage](https://github.com/chuck2076/Team_Profile_Generator_CRS/tree/main/output#usage)
-- [Contributors](https://github.com/chuck2076/Team_Profile_Generator_CRS/tree/main/output#contributors)
-- [Tests](https://github.com/chuck2076/Team_Profile_Generator_CRS/tree/main/output#tests)
-- [Questions](https://github.com/chuck2076/Team_Profile_Generator_CRS/tree/main/output#questions)
+- [Installation](https://github.com/chuck2076/Team_Profile_Generator_CRS#installation)
+- [Usage](https://github.com/chuck2076/Team_Profile_Generator_CRS#usage)
+- [Video](https://github.com/chuck2076/Team_Profile_Generator_CRS#video)
+- [Tech Stack](https://github.com/chuck2076/Team_Profile_Generator_CRS#tech-stack)
+- [Contributors](https://github.com/chuck2076/Team_Profile_Generator_CRS#contributors)
+- [Tests](https://github.com/chuck2076/Team_Profile_Generator_CRS#tests)
+- [Questions](https://github.com/chuck2076/Team_Profile_Generator_CRS#questions)
 ## Installation:
  > The user should clone the repository and open in preferred coding terminal. User will also need to install the Jest NPM for testing and Inquirer NPM for the question prompts.
 ## Usage:
