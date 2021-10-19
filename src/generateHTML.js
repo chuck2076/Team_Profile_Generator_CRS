@@ -6,7 +6,7 @@ const Manager = data[0]
 return` <div class="card border-danger mb-3" style="max-width: 18rem;">
 <div class="card-header">
 <h3>${Manager.name}</h3>
-<h4>Manager</h4><i class="fa-solid fa-mug-hot fa-lg"></i>
+<h4>Manager</h4><i class="fas fa-solid fa-mug-hot fa-lg"></i>
 </div>
 <div class="card-body text-danger">
 <p class="id">ID: ${Manager.id}</p>
