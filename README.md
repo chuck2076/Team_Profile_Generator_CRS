@@ -14,9 +14,10 @@
 ## Installation:
  > The user should clone the repository and open in preferred coding terminal. User will also need to install the Jest NPM for testing and Inquirer NPM for the question prompts.
 ## Usage:
- > Open index.js in the terminal and type node index.js at the command prompt. Follow the command prompts to add information and create a "team.html" page. Add screenshot of terminal here. 
+ > Open index.js in the terminal and type node index.js at the command prompt. Follow the command prompts to add information and create a "team.html" page.
+ > ![Terminal Screenshot](./Assets/terminalscreen.png)
  ## Video: 
- > Watch a short video on how to use the Team Profile Generator [Team Profile Video](https://watch.screencastify.com/v/hSGDHr7ImWFgInykSgry)
+ > Watch a short video on how to use the Team Profile Generator [Team Profile Video](https://drive.google.com/file/d/1g3sBRRxBy5ubPMcpiEC1quq0Cnxza7UB/view)
 ## Tech Stack:
  > * Node.js 
  > * Inquirer NPM  
