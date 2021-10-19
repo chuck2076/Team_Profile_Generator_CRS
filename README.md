@@ -1,6 +1,7 @@
 # Team Profile Generator
 ## Description:
- > This app uses Node.js to generate a Team Profile web page for a web development team. Add screenshot of finished page here.
+ > This app uses Node.js to generate a Team Profile web page for a web development team. 
+ >![TeamProfileGenerator](./Assets/team.png)
 ## License: 
  > [![badge](https://img.shields.io/badge/license-MIT-brightgreen)](MIT)
 ## Table of Contents:
